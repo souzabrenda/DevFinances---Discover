@@ -18,6 +18,21 @@ html {
   font-size: 93.75%;
 }
 
+button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  background-color: var(--secondColor);
+  color: var(--textColor);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #83ff56 ;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -162,7 +177,95 @@ td.expense {
   color: red;
 }
 
+tr td button {
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+tr td button:hover {
+  background: none;
+} 
+
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in;
+  z-index: 999;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+  background-color: var(--background-color);
+  padding: 2.4rem;
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 0.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+#form {
+  max-width: 500px;
+}
+
+#form h2 {
+  margin-top: 0;
+}
+
+input {
+  border: none;
+  border-radius: 0.2rem;
+  outline: none;
+  padding: 0.8rem;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.input-group {
+  margin-top: 0.8rem;
+}
+
+.input-group small {
+  opacity: 0.4;
+}
+
+.input-group.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-group.actions.button,
+.input-group.actions button {
+  width: 50%;
+}
+
+.button.cancel {
+  color: #7e848a;
+  text-transform: uppercase;
+}
+
+.button.cancel:hover {
+  opacity: 1;
+  color: var(--secondColor);
+}
 
 footer {
   text-align: center;
@@ -170,8 +273,6 @@ footer {
   color: var(--titleColor);
   opacity: 0.6;
 }
-
-
 
 @media (min-width: 800px) {
   html {
